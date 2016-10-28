@@ -1,0 +1,42 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" controllerName="nl.stedin.apps.somain.controller.Master">
+	<Page id="page" title="{masterView>/title}" navButtonPress="onNavBack" showNavButton="true">
+		<subHeader>
+			<Bar id="headerBar">
+				<contentMiddle>
+					<SearchField id="searchField" showRefreshButton="{= !${device>/support/touch} }" tooltip="{i18n>masterSearchTooltip}" width="100%"
+						search="onSearch"/>
+				</contentMiddle>
+			</Bar>
+		</subHeader>
+		<content>
+			<PullToRefresh id="pullToRefresh" visible="{device>/support/touch}" refresh="onRefresh"/>
+			<!-- For client side filtering add this to the items attribute:  parameters: {operationMode: 'Client'}}" -->
+			<List id="list"
+				items="{ path: '/Opdrachten', sorter: { path: 'BestelNummer', descending: false }, groupHeaderFactory: '.createGroupHeader' }"
+				busyIndicatorDelay="{masterView>/delay}" noDataText="{masterView>/noDataText}"
+				mode="{= ${device>/system/phone} ? 'None' : 'SingleSelectMaster'}" growing="true" growingThreshold="20" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished" selectionChange="onSelectionChange">
+				<infoToolbar>
+					<Toolbar active="true" id="filterBar" visible="{masterView>/isFilterBarVisible}" press="onOpenViewSettings">
+						<Title id="filterBarLabel" text="{masterView>/filterBarLabel}"/>
+					</Toolbar>
+				</infoToolbar>
+				<items>
+					<ObjectListItem type="{= ${device>/system/phone} ? 'Active' : 'Inactive'}" press="onSelectionChange" title="{BestelNummer}"
+						intro="Hello Intro" number="33" numberUnit="EUR" markFlagged="true" markFavorite="true" showMarkers="true" markLocked="true">
+						<firstStatus>
+							<ObjectStatus title="STAT" text="TEXT" state="None" icon="sap-icon://add"></ObjectStatus>
+						</firstStatus>
+						<attributes>
+							<ObjectAttribute title="Hello Title" text="Test"></ObjectAttribute>
+							<ObjectAttribute title="Hello Title2" text="Test2"></ObjectAttribute>
+						</attributes>
+					</ObjectListItem>
+				</items>
+			</List>
+		</content>
+		<footer>
+			<OverflowToolbar id="footerbar"/>
+		</footer>
+	</Page>
+</mvc:View>

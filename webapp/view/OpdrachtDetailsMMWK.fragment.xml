@@ -1,0 +1,18 @@
+<core:FragmentDefinition xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns="sap.m">
+
+<List id="MMWKList" items="{/Attachments}" includeItemInSelection="true" mode="SingleSelectLeft">
+		<headerToolbar>
+			<Toolbar>
+				<content>
+					<Title text="MMWK" level="H2"/>
+					<ToolbarSpacer/>
+					<Button text="Button" width="100px" id="__buttggon0"/>
+				
+				</content>
+			</Toolbar>
+		</headerToolbar>
+		<StandardListItem title="{DocTitel}" description="{DocID}" icon="{ProductPicUrl}" iconDensityAware="false" iconInset="false" press="handlePress" detailPress="handleDetailPress" type="DetailAndActive"/>
+
+	</List>
+	
+	</core:FragmentDefinition>

@@ -1,0 +1,15 @@
+<core:FragmentDefinition xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns="sap.m">
+
+<UploadCollection fileType="undefined" maximumFilenameLength="0" maximumFileSize="0" mimeType="undefined" id="__collection0">
+
+    <items>
+
+        <UploadCollectionItem contributor="Contributor1" fileName="fileName1" fileSize="0" uploadedDate="Fri Oct 28 2016" id="__item1"/>
+
+        <UploadCollectionItem contributor="Contributor1" fileName="fileName2" fileSize="0" uploadedDate="Fri Oct 28 2016" id="__item2"/>
+
+        <UploadCollectionItem contributor="Contributor1" fileName="fileName3" fileSize="0" uploadedDate="Fri Oct 28 2016" id="__item3"/></items>
+
+</UploadCollection>
+	
+	</core:FragmentDefinition>

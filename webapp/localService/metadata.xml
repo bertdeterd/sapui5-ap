@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edmx:Edmx xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData"
+	xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xml:lang="nl" xmlns="http://schemas.microsoft.com/ado/2008/09/edm" sap:schema-version="1" Namespace="ZGW_TEST_SRV">
+			<EntityType sap:content-version="1" Name="UserFromSearch">
+				<Key>
+					<PropertyRef Name="Bname"/>
+				</Key>
+				<Property Name="Bname" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Gebruiker"
+					MaxLength="12" Nullable="false" Type="Edm.String"/>
+				<Property Name="NameFirst" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Voornaam"
+					MaxLength="40" Nullable="false" Type="Edm.String"/>
+				<Property Name="NameLast" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Achternaam"
+					MaxLength="40" Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="Opdrachten">
+				<Key>
+					<PropertyRef Name="BestelNummer"/>
+				</Key>
+				<Property Name="BestelNummer" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Opdracht"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="KlantorderNummer" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Klantorder" Nullable="false" Type="Edm.String"/>
+				<Property Name="GeplandStart" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Geplande start" Nullable="false" Type="Edm.String"/>
+				<Property Name="GeplandEind" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Gepland eind" Nullable="false" Type="Edm.String"/>
+				<Property Name="OpdrachtTitel" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Opdracht titel" Nullable="false" Type="Edm.String"/>
+				<Property Name="Omschrijving" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Omschrijving" Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityType sap:content-version="1" Name="OpdrachtDetails">
+				<Key>
+					<PropertyRef Name="BestelNummer"/>
+				</Key>
+				<Property Name="BestelNummer" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Opdracht"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="KlantorderNummer" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Klantorder" Nullable="false" Type="Edm.String"/>
+				<Property Name="GeplandStart" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Geplande start" Nullable="false" Type="Edm.String"/>
+				<Property Name="GeplandEind" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Gepland eind" Nullable="false" Type="Edm.String"/>
+				<Property Name="AangemaaktDoor" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Aangemaakt door" Nullable="false" Type="Edm.String"/>
+				<Property Name="AantalAttachments" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Aantal bijlagen" Nullable="false" Type="Edm.Decimal"/>
+				<Property Name="AantalBelet" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Aantal bijlagen" Nullable="false" Type="Edm.Decimal"/>
+				<Property Name="AantalMMWK" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Aantal MMWK"
+					Nullable="false" Type="Edm.Decimal"/>
+				<Property Name="AantalPV" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Aantal PV"
+					Nullable="false" Type="Edm.Decimal"/>
+			</EntityType>
+			
+			
+				<EntityType sap:content-version="1" Name="Attachments">
+				<Key>
+					<PropertyRef Name="DocID"/>
+				</Key>
+				<Property Name="DocID" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Opdracht"
+					Nullable="false" Type="Edm.String"/>
+				<Property Name="DocTitel" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Klantorder" Nullable="false" Type="Edm.String"/>
+				<Property Name="DocOmschrijving" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Geplande start" Nullable="false" Type="Edm.String"/>
+				<Property Name="BijlageType" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="Extensie" Nullable="false" Type="Edm.String"/>
+			
+			</EntityType>
+			
+			
+			
+			<EntityType sap:content-version="1" Name="SalesOrder">
+				<Key>
+					<PropertyRef Name="SALESORDERNUMBER"/>
+				</Key>
+				<Property Name="SALESORDERNUMBER" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false"
+					sap:label="SalesOrder" Nullable="false" Type="Edm.String"/>
+				<Property Name="USERSTATUS" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="UserStatus"
+					Nullable="false" Type="Edm.String"/>
+			</EntityType>
+			<EntityContainer Name="ZGW_TEST_SRV_Entities" sap:supported-formats="atom json xlsx" m:IsDefaultEntityContainer="true">
+				<EntitySet sap:content-version="1" Name="UserFromSearchSet" sap:updatable="false" sap:creatable="false" sap:pageable="false"
+					sap:deletable="false" EntityType="ZGW_TEST_SRV.UserFromSearch"/>
+				<EntitySet sap:content-version="1" Name="SalesOrders" sap:updatable="false" sap:creatable="false" sap:pageable="false" sap:deletable="false"
+					EntityType="ZGW_TEST_SRV.SalesOrder"/>
+				<EntitySet sap:content-version="1" Name="Opdrachten" sap:updatable="false" sap:creatable="false" sap:pageable="false" sap:deletable="false"
+					EntityType="ZGW_TEST_SRV.Opdrachten"/>
+				<EntitySet sap:content-version="1" Name="OpdrachtDetails" sap:updatable="false" sap:creatable="false" sap:pageable="false"
+					sap:deletable="false" EntityType="ZGW_TEST_SRV.OpdrachtDetails"/>
+						<EntitySet sap:content-version="1" Name="Attachments" sap:updatable="false" sap:creatable="false" sap:pageable="false"
+					sap:deletable="false" EntityType="ZGW_TEST_SRV.Attachments"/>
+			</EntityContainer>
+			<atom:link rel="self" href="http://encsapdejci.ee.intern:8010/sap/opu/odata/sap/ZGW_TEST_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/>
+			<atom:link rel="latest-version" href="http://encsapdejci.ee.intern:8010/sap/opu/odata/sap/ZGW_TEST_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

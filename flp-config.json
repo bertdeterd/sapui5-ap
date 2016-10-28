@@ -1,0 +1,35 @@
+{
+    "application": {
+        "id": "",
+        "title": "SalesOrderStedin",
+        "description": "AannemersOpdrachten",
+        "type": "SAP_UI5_Component",
+        "componentUrl": "/",
+        "appUrl": "#SalesOrderStedin-Display",
+        "navigationComponentName": "nl.stedin.apps.somain",
+        "intentSemanticObject": "SalesOrderStedin",
+        "intentAction": "Display",
+        "html5ApplicationName": "salesorderstedin",
+        "HCPParentApplicationName": ""
+    },
+    "assignment": {
+        "groups": [
+            "4e95d699-9344-408f-b0ab-b42e49d492de-1452852743371"
+        ],
+        "contentPackages": [
+            "8724d422-5354-4de3-a8da-7b8ebae2d98b-1452852790450"
+        ],
+        "categories": []
+    },
+    "tile": {
+        "type": "StaticTile",
+        "title": "Aannemers",
+        "subtitle": "Opdrachten",
+        "searchKeywords": "Aannemers,Opdrachten",
+        "displayIconUrl": "sap-icon://approvals",
+        "displayInfoText": "",
+        "size": "1x1",
+        "serviceURL": "",
+        "refreshInterval": ""
+    }
+}

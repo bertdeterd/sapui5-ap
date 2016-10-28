@@ -1,0 +1,24 @@
+<core:FragmentDefinition xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns="sap.m">
+
+<List id="PVList" items="{/Attachments}" includeItemInSelection="true" mode="SingleSelectLeft">
+		<headerToolbar>
+			<Toolbar>
+				<content>
+					<Title text="PV" level="H2"/>
+					<ToolbarSpacer/>
+				</content>
+			</Toolbar>
+		</headerToolbar>
+		<StandardListItem title="{DocTitel}" description="{DocID}" icon="{ProductPicUrl}" iconDensityAware="false" iconInset="false" press="handlePress" detailPress="handleDetailPress" type="DetailAndActive"/>
+	<infoToolbar>
+	    <Toolbar width="100%" id="__xxlwwbar2">
+	        <content>
+	            <ToggleButton id="__xxwwx" icon="sap-icon://multi-select"/>
+	            <Button id="_xwwx" icon="sap-icon://delete"/>
+	        </content>
+	    </Toolbar>
+	</infoToolbar>
+	</List>
+	
+	
+	</core:FragmentDefinition>

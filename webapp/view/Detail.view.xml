@@ -1,0 +1,53 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:footerbar="sap.ushell.ui.footerbar" controllerName="nl.stedin.apps.somain.controller.Detail">
+	<Page id="page" navButtonPress="onNavBack" showNavButton="{device>/system/phone}" title="{i18n>detailTitle}" busy="{detailView>/busy}" busyIndicatorDelay="{detailView>/delay}">
+		<content>
+			<ObjectHeader id="objectHeader" title="Opdracht {BestelNummer}"/>
+			<IconTabBar id="iconTabBar" selectedKey="iconTabBarKeyINFO" class="sapUiResponsiveContentPadding" select="onSelectTab">
+				<items>
+					<IconTabFilter id="iconTabBarFilter1" key="iconTabBarKeyINFO" text="Details" icon="sap-icon://hint" tooltip="{i18n>detailIconTabBarInfo}">
+						<content>
+							<core:Fragment fragmentName="nl.stedin.apps.somain.view.OpdrachtDetails" type="XML"/>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter id="iconTabBarFilter2" key="iconTabBarKeyATTA" text="Bijlagen" icon="sap-icon://attachment" count="{AantalAttachments}" tooltip="{i18n>detailIconTabBarAttachments}">
+						<content>
+							<core:Fragment fragmentName="nl.stedin.apps.somain.view.OpdrachtDetailsAttachments" type="XML"/>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter id="iconTabBarFilter3" count="{AantalBelet}" text="Belet" icon="sap-icon://stop" tooltip="{i18n>detailIconTabBarAttachments}"/>
+					<IconTabFilter id="iconTabBarFilter4" key="iconTabBarKeyMMWK" count="{AantalMMWK}" text="Meerwerk" icon="sap-icon://add-activity-2" tooltip="{i18n>detailIconTabBarAttachments}">
+						<content>
+							<core:Fragment fragmentName="nl.stedin.apps.somain.view.OpdrachtDetailsMMWK" type="XML"/>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter id="iconTabBarFilterPV" key="iconTabBarKeyPV" count="{AantalPV}" text="PV's" icon="sap-icon://flag" tooltip="{i18n>detailIconTabBarAttachments}">
+						<content>
+							<core:Fragment fragmentName="nl.stedin.apps.somain.view.OpdrachtDetailsPV" type="XML"/>
+						</content>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+		<!---->
+		<footer>
+			<OverflowToolbar id="footerToolbar">
+				<ToolbarSpacer/>
+					<Button text="Toevoegen MMWK" width="100px" id="__buttonSS" visible="{= ${detailView>/selectedTabKey} === 'iconTabBarKeyMMWK' }" icon="sap-icon://add" type="Emphasized"/>
+				<Button text="Toevoegen PV" width="100px" id="__button0" visible="{= ${detailView>/selectedTabKey} === 'iconTabBarKeyPV' }" icon="sap-icon://add" type="Emphasized"/>
+				<Button id="shareButton" tooltip="{i18n>shareTooltip}" icon="sap-icon://action" press="onSharePress">
+					<dependents>
+						<ActionSheet id="shareSheet" showCancelButton="true" placement="Top">
+							<buttons>
+								<Button id="shareEmail" icon="sap-icon://email" text="{i18n>shareSendEmail}" press="onShareEmailPress"/>
+								<Button id="shareInJam" icon="sap-icon://jam" text="{i18n>shareOnJamTitle}" press="onShareInJamPress" visible="{FLP>/isShareInJamActive}"/>
+								<footerbar:AddBookmarkButton id="shareTile" appData="{ path: 'detailView>/saveAsTileTitle', formatter: '.formatter.shareTileData' }"/>
+							</buttons>
+						</ActionSheet>
+					</dependents>
+				</Button>
+			<content/>
+			</OverflowToolbar>
+		</footer>
+	
+	</Page>
+</mvc:View>
